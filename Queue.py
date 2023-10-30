@@ -50,9 +50,12 @@ class Queue:
     def __repr__(self):
         return "[" + str(self.first) + "]"
 
-    def getFirst(self):
-        return self.first.value
+    def getFirstValue(self):
+        return self.last.next.value
 
+    def getFirstNode(self):
+        return self.last.next
+    
     def getLastNext(self):
         if self.size > 1:
             return self.last.next.value

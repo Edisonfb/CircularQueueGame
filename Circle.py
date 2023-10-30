@@ -4,9 +4,12 @@ class Circle:
         self.posY = None
         
 
-    def setPos(posX, posY):
+    def setPos(self, posX, posY):
         self.posX = posX
         self.posY = posY
 
     def print(self):
         return "olá"
+    
+    def getPos(self):
+        return (self.posX, self.posY)
