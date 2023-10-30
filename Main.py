@@ -29,14 +29,27 @@ position = (0, 0)
 #Setando a posição dos circulos
 func.setPos(queue, angulo, position, len, height, angulo_soma)
 
-test.printPosQueue(queue)
+#test.printPosQueue(queue)
+
+finished = False
+
+radius = 30
+#objeto que vai percorrer a lista e quando o tempo acabar ele vai excluir em quem parou
+potato = queue.getFirstNode()
+timetodelete = rand.randint(8,10)
+
+#verificar o valor inicial do tempo para deletar
+print(f"primeiro tempo para deletar {timetodelete}")
+print(f"O tempo inicial {func.getTime(tempo_inicial)}")
+
+if timetodelete < 5:
+    timetodelete = 5
+
 
 #Inicializar o pygame
 pygame.init()
 #Criar janela
 window = pygame.display.set_mode((len, height))
-
-
 
 color = (255, 0 ,0)
 #fonte padrão do pygame
@@ -44,15 +57,6 @@ font = pygame.font.Font(None, 35)
 textColor = (0,0,0)
 
 
-finished = False
-
-radius = 30
-#objeto que vai percorrer a lista e quando o tempo acabar ele vai excluir em quem parou
-potato = queue.getFirstNode()
-timetodelete = rand.randint(10,15)
-
-#verificar o valor inicial do tempo para deletar
-print(f"primeiro tempo para deletar {timetodelete}")
 #Loop principal:
 while True:
     for evento in pygame.event.get():
@@ -95,10 +99,3 @@ while True:
         
 
 #queue = func.CriarFila(10)
-
-
-
-
-
-
-

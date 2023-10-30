@@ -33,3 +33,6 @@ def initialTime():
 
 def getTime(initialtime):
     return (time.time() - initialtime)
+
+def delay(valueToDelay):
+    time.sleep(valueToDelay)
