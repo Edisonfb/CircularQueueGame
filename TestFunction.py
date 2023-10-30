@@ -1,5 +1,5 @@
 from Queue import Queue
-
+from Circle import Circle
 
 def testQueue():
     test = Queue()
@@ -17,6 +17,6 @@ def testQueue():
 def printQueue(fila):
     
     for i in range(0, fila.getSize()):
-        print(fila.getFirst())
+        print(i, " ", fila.getFirst().print())
         fila.dequeue()
     
