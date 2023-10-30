@@ -10,6 +10,7 @@ tempo_inicial = func.initialTime()
 
 amount = int(input("Digite quantas pessoas: "))
 
+
 queue = func.createQueue(amount)
 
 #Testando se ele reconhece dois objetos e funcionou
@@ -38,13 +39,20 @@ window = pygame.display.set_mode((len, height))
 
 
 color = (255, 0 ,0)
+#fonte padrão do pygame
+font = pygame.font.Font(None, 35)
+textColor = (0,0,0)
+
 
 finished = False
 
 radius = 30
 #objeto que vai percorrer a lista e quando o tempo acabar ele vai excluir em quem parou
 potato = queue.getFirstNode()
-timetodelete = rand.randint(5,8)
+timetodelete = rand.randint(10,15)
+
+#verificar o valor inicial do tempo para deletar
+print(f"primeiro tempo para deletar {timetodelete}")
 #Loop principal:
 while True:
     for evento in pygame.event.get():
@@ -63,6 +71,8 @@ while True:
         window.fill((255, 255, 255))
         for i in range(0, queue.getSize()):
             pygame.draw.circle(window, color, aux.value.getPos(), radius)
+            text = font.render(aux.value.getName(), True, textColor)
+            window.blit(text, aux.value.getPosName(35))
             if queue.getSize() > 1:
                 aux = aux.next
             

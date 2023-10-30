@@ -9,7 +9,8 @@ def createQueue(amount):
     #mudasse em um mudava em todos
     #aux = Circle()
     for i in range(0, amount):
-        queue.enqueue(Circle())
+        name = input("digite o nome ")
+        queue.enqueue(Circle(name))
     return queue
 
 def newPos(angle, position, lenght, height):
